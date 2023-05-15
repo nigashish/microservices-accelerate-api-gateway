@@ -1,0 +1,56 @@
+server:
+  port: 9190
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: visor-master-service
+          uri: lb://VISOR-MASTER-SERVICE
+          predicates:
+            - Path=/masters/**
+         
+                
+        - id: visor-prs-service
+          uri: lb://VISOR-PRS-SERVICE
+          predicates:
+            - Path=/prs/**
+     
+                
+        - id: visor-exams-service
+          uri: lb://VISOR-EXAMS-SERVICE
+          predicates:
+            - Path=/exams/**
+         
+        - id: visor-schoolapp-service
+          uri: lb://VISOR-SCHOOLAPP-SERVICE
+          predicates:
+            - Path=/schools/**
+  
+        - id: visor-teacherapp-service
+          uri: lb://VISOR-TEACHERAPP-SERVICE
+          predicates:
+            - Path=/teachers/**
+     
+        - id: visor-adminapp-service
+          uri: lb://VISOR-ADMINAPP-SERVICE
+          predicates:
+            - Path=/admin/**
+   
+                
+          
+
+          
+                
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      #defaultZone: http://164.52.202.187:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+   hostname: localhost
+  
+
