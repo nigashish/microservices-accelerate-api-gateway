@@ -37,20 +37,25 @@ spring:
           uri: lb://VISOR-ADMINAPP-SERVICE
           predicates:
             - Path=/admin/**
+            
+        - id: visor-studentapp-service
+          uri: lb://VISOR-STUDENTAPP-SERVICE
+          predicates:
+            - Path=/students/**
    
                 
           
 
           
                 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    serviceUrl:
-      #defaultZone: http://164.52.202.187:8761/eureka/
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-   hostname: localhost
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    serviceUrl:
+#      #defaultZone: http://164.52.202.187:8761/eureka/
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#   hostname: localhost
   
 
