@@ -42,6 +42,10 @@ spring:
           uri: lb://VISOR-STUDENTAPP-SERVICE
           predicates:
             - Path=/students/**
+        - id: visor-job-service
+          uri: lb://VISOR-JOB-SERVICE
+          predicates:
+            - Path=/jobs/**
    
                 
           
