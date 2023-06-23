@@ -2,48 +2,49 @@ server:
   port: 9190
 spring:
   application:
-    name: GATEWAY-SERVICE
+    name: gateway-service
   cloud:
     gateway:
       routes:
         - id: visor-master-service
-          uri: lb://VISOR-MASTER-SERVICE
+          uri: lb://visor-master-service
           predicates:
             - Path=/masters/**
          
                 
         - id: visor-prs-service
-          uri: lb://VISOR-PRS-SERVICE
+          uri: lb://visor-prs-service
           predicates:
             - Path=/prs/**
      
                 
         - id: visor-exams-service
-          uri: lb://VISOR-EXAMS-SERVICE
+          uri: lb://visor-exams-service
           predicates:
             - Path=/exams/**
          
         - id: visor-schoolapp-service
-          uri: lb://VISOR-SCHOOLAPP-SERVICE
+          uri: lb://visor-schoolapp-service
           predicates:
             - Path=/schools/**
   
         - id: visor-teacherapp-service
-          uri: lb://VISOR-TEACHERAPP-SERVICE
+          uri: lb://visor-teacherapp-service
           predicates:
             - Path=/teachers/**
      
         - id: visor-adminapp-service
-          uri: lb://VISOR-ADMINAPP-SERVICE
+          uri: lb://visor-adminapp-service
           predicates:
             - Path=/admin/**
             
         - id: visor-studentapp-service
-          uri: lb://VISOR-STUDENTAPP-SERVICE
+          uri: lb://visor-studentapp-service
           predicates:
             - Path=/students/**
+            
         - id: visor-job-service
-          uri: lb://VISOR-JOB-SERVICE
+          uri: lb://visor-job-service
           predicates:
             - Path=/jobs/**
    
